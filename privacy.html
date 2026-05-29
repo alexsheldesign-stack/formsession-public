@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — FormSession</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .logo-icon img {
+      width: 100%; height: 100%;
+      display: block;
+    }
+    .logo-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .updated {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #00ff88;
+      margin: 36px 0 12px;
+    }
+    p { margin-bottom: 14px; color: #ccc; }
+    ul {
+      margin: 0 0 14px 20px;
+      color: #ccc;
+    }
+    ul li { margin-bottom: 6px; }
+    a { color: #00ff88; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .highlight {
+      background: #111;
+      border: 1px solid #222;
+      border-left: 3px solid #00ff88;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin: 20px 0;
+      color: #ccc;
+      font-size: 15px;
+    }
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #1a1a1a;
+      color: #555;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="logo">
+      <div class="logo-icon"><img src="icons/icon128.png" alt="FormSession"></div>
+      <div class="logo-name">FormSession</div>
+    </div>
+
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: May 27, 2026</p>
+
+    <div class="highlight">
+      FormSession is designed with privacy in mind. Your form data is stored locally on your device and is never sold or shared with third parties.
+    </div>
+
+    <h2>1. What We Collect</h2>
+    <p>FormSession collects the following information:</p>
+    <ul>
+      <li><strong>Form data</strong> — values from HTML form fields (text inputs, dropdowns, checkboxes, etc.) on websites you have explicitly whitelisted. This data is stored locally in your browser using Chrome's storage API and never transmitted to our servers.</li>
+      <li><strong>Installation ID</strong> — a randomly generated identifier created when you install the extension. This ID is used solely to manage your subscription status and trial period. It contains no personal information.</li>
+      <li><strong>Subscription status</strong> — whether your trial is active or you have a paid subscription. This is stored on our servers (Cloudflare Workers + D1) linked only to your installation ID.</li>
+    </ul>
+
+    <h2>2. What We Do NOT Collect</h2>
+    <ul>
+      <li>We do not collect your name, email address, or any personal identifiers unless you voluntarily provide an email during checkout.</li>
+      <li>We do not read, transmit, or store the content of your form data on any server.</li>
+      <li>We do not track your browsing history or the URLs you visit beyond what is necessary to match saved sessions to the correct page.</li>
+      <li>We do not use cookies or third-party analytics.</li>
+      <li>We do not sell your data to anyone, ever.</li>
+    </ul>
+
+    <h2>3. How We Use Your Data</h2>
+    <p>The installation ID is used exclusively to:</p>
+    <ul>
+      <li>Check whether your free trial is still active</li>
+      <li>Verify an active paid subscription</li>
+      <li>Link a payment to your installation after checkout</li>
+    </ul>
+    <p>Form data you save stays entirely on your device and is never uploaded to any server.</p>
+
+    <h2>4. Data Storage</h2>
+    <ul>
+      <li><strong>Form session data</strong> — stored locally in Chrome's <code>storage.local</code> API on your device only.</li>
+      <li><strong>Installation ID and subscription status</strong> — stored on Cloudflare's infrastructure (Workers KV and D1 database) in the European Union region.</li>
+      <li><strong>Payment data</strong> — handled entirely by LemonSqueezy, our payment processor. We never see or store your credit card details. LemonSqueezy's privacy policy applies: <a href="https://www.lemonsqueezy.com/privacy" target="_blank">lemonsqueezy.com/privacy</a>.</li>
+    </ul>
+
+    <h2>5. Data Sharing</h2>
+    <p>We do not share your data with any third parties except:</p>
+    <ul>
+      <li><strong>Cloudflare</strong> — infrastructure provider for our backend (installation ID and subscription status only).</li>
+      <li><strong>LemonSqueezy</strong> — payment processor (only if you purchase a subscription).</li>
+    </ul>
+    <p>Both providers are GDPR-compliant.</p>
+
+    <h2>6. Your Rights (GDPR)</h2>
+    <p>If you are located in the European Union or Ukraine, you have the right to:</p>
+    <ul>
+      <li>Request access to the data we hold about you (installation ID and subscription status)</li>
+      <li>Request deletion of your data</li>
+      <li>Object to processing of your data</li>
+    </ul>
+    <p>To exercise these rights, contact us at <a href="mailto:alexsheldesign@gmail.com">alexsheldesign@gmail.com</a>.</p>
+
+    <h2>7. Data Retention</h2>
+    <p>Subscription and installation data is retained as long as your account is active. If you uninstall the extension and do not use it for 24 months, your installation record may be deleted from our servers. Local form data is deleted when you clear your browser data or uninstall the extension.</p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>FormSession is not directed at children under 13. We do not knowingly collect data from children.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify users of significant changes by updating the date at the top of this page. Continued use of the extension after changes constitutes acceptance of the updated policy.</p>
+
+    <h2>10. Contact</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us at:<br>
+    <a href="mailto:alexsheldesign@gmail.com">alexsheldesign@gmail.com</a></p>
+
+    <footer>
+      &copy; 2026 FormSession. All rights reserved.
+    </footer>
+
+  </div>
+</body>
+</html>
