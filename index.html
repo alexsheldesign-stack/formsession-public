@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FormSession</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      padding: 16px 32px;
+      border-bottom: 1px solid #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo img { width: 32px; height: 32px; border-radius: 6px; }
+    .logo-name { font-size: 18px; font-weight: 700; color: #fff; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: #aaa; text-decoration: none; font-size: 14px; }
+    .nav-links a:hover { color: #00ff88; }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero-icon { width: 80px; height: 80px; border-radius: 18px; margin-bottom: 24px; }
+    h1 { font-size: 40px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    p { font-size: 18px; color: #aaa; max-width: 500px; margin-bottom: 32px; line-height: 1.6; }
+    .btn {
+      background: #00ff88;
+      color: #000;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .btn:hover { background: #00cc66; }
+    footer {
+      padding: 24px 32px;
+      border-top: 1px solid #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #555;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: #555; text-decoration: none; }
+    .footer-links a:hover { color: #00ff88; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="icons/icon128.png" alt="FormSession">
+      <span class="logo-name">FormSession</span>
+    </div>
+    <div class="nav-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="refund.html">Refund Policy</a>
+    </div>
+  </nav>
+
+  <main>
+    <img class="hero-icon" src="icons/icon128.png" alt="FormSession">
+    <h1>FormSession</h1>
+    <p>Save and restore form data across sessions. Never lose your work on complex forms again.</p>
+    <a class="btn" href="https://chromewebstore.google.com" target="_blank">Get it on Chrome Web Store</a>
+  </main>
+
+  <footer>
+    <span>&copy; 2026 FormSession. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="refund.html">Refund Policy</a>
+    </div>
+  </footer>
+</body>
+</html>
