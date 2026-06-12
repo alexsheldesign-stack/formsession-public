@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank you — FormSession</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a; color: #e0e0e0;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    }
+    .card {
+      background: #111; border: 1px solid #1e1e1e;
+      border-radius: 16px; padding: 48px 40px;
+      text-align: center; max-width: 440px; width: 100%;
+    }
+    .icon {
+      width: 64px; height: 64px; border-radius: 16px;
+      background: #0d2a1a; margin: 0 auto 24px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px;
+    }
+    h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    p { font-size: 15px; color: #888; line-height: 1.6; margin-bottom: 8px; }
+    .status {
+      margin: 24px 0;
+      background: #0d2a1a; border: 1px solid #00ff8833;
+      border-radius: 10px; padding: 14px 18px;
+      font-size: 14px; color: #00ff88;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .spinner {
+      width: 16px; height: 16px; flex-shrink: 0;
+      border: 2px solid #00ff8844;
+      border-top-color: #00ff88;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .done { display: none; }
+    .done.visible { display: flex; }
+    .loading { display: flex; }
+    .loading.hidden { display: none; }
+    .btn {
+      display: inline-block; margin-top: 24px;
+      background: #00ff88; color: #000;
+      padding: 12px 28px; border-radius: 10px;
+      font-weight: 700; font-size: 14px;
+      text-decoration: none;
+    }
+    .btn:hover { background: #00cc66; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon"><img src="icons/icon128.png" width="40" height="40" style="border-radius:10px" alt="FormSession"></div>
+    <h1>You're all set!</h1>
+    <p>Your FormSession subscription is now active.</p>
+    <p>Activating your extension…</p>
+
+    <div class="status loading" id="loading-status">
+      <div class="spinner"></div>
+      <span>Activating your subscription…</span>
+    </div>
+
+    <div class="status done" id="done-status">
+      <span style="font-size:18px">✅</span>
+      <span>Extension activated! You can close this tab.</span>
+    </div>
+
+    <a href="https://chromewebstore.google.com/detail/formsession/ijhfhhemhfhgbmidlggjjlookdhbbcen" class="btn" id="store-btn" style="display:none">
+      Open Chrome Web Store
+    </a>
+  </div>
+
+  <script>
+    // Send recheck signal to FormSession extension
+    async function activateExtension() {
+      try {
+        // Try to send message to extension
+        if (typeof chrome !== 'undefined' && chrome.runtime) {
+          // Get extension ID from known ID
+          const EXT_ID = 'ijhfhhemhfhgbmidlggjjlookdhbbcen';
+          chrome.runtime.sendMessage(EXT_ID, { action: 'recheckLicense' }, function(response) {
+            showDone();
+          });
+          // Fallback timeout
+          setTimeout(showDone, 3000);
+        } else {
+          // Not in Chrome or extension not installed
+          setTimeout(showDone, 1500);
+        }
+      } catch (e) {
+        setTimeout(showDone, 1500);
+      }
+    }
+
+    function showDone() {
+      document.getElementById('loading-status').classList.add('hidden');
+      document.getElementById('done-status').classList.add('visible');
+      document.getElementById('store-btn').style.display = 'inline-block';
+    }
+
+    // Start activation after short delay
+    setTimeout(activateExtension, 1000);
+  </script>
+</body>
+</html>
