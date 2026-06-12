@@ -156,7 +156,7 @@
             <li>React, Angular, SPA support</li>
             <li>Priority support</li>
           </ul>
-          <a href="https://chromewebstore.google.com/detail/formsession/ijhfhhemhfhgbmidlggjjlookdhbbcen" class="plan-btn plan-btn-primary">Get started</a>
+          <a href="#" class="plan-btn plan-btn-primary" onclick="openPaddleCheckout(event)">Get started</a>
         </div>
       </div>
     </div>
@@ -190,6 +190,14 @@
   <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
   <script>
     Paddle.Initialize({ token: 'live_aacbfccdbdf66a1fdb5cb039e11' });
+
+    function openPaddleCheckout(e) {
+      e.preventDefault();
+      Paddle.Checkout.open({
+        items: [{ priceId: 'pri_01ktngdgcy5b9dnqgbny7mwy0d', quantity: 1 }],
+        settings: { successUrl: 'https://alexsheldesign-stack.github.io/thank-you.html' }
+      });
+    }
 
     // Auto-open checkout if _ptxn is in URL
     const urlParams = new URLSearchParams(window.location.search);
