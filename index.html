@@ -190,6 +190,11 @@
   <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
   <script>
     Paddle.Initialize({ token: 'live_aacbfccdbdf66a1fdb5cb039e11', locale: 'en' });
+
+    // Auto-open checkout if _ptxn is in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const ptxn = urlParams.get('_ptxn');
+    if (ptxn) { Paddle.Checkout.open({ transactionId: ptxn }); }
   </script>
 </body>
 </html>
